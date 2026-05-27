@@ -7,24 +7,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #c9a96e;
-    --gold-light: #e8d5a3;
-    --gold-dark: #9a7840;
-    --crimson: #8b0000;
-    --dark: #050505;
-    --dark-2: #0a0a0a;
-    --dark-3: #111111;
-    --dark-4: #191919;
+    --gold: #d4a843;
+    --gold-light: #f0d080;
+    --gold-dark: #b8922e;
+    --navy: #0d1b2a;
+    --navy-2: #132338;
+    --navy-3: #1a2f47;
+    --navy-4: #213855;
     --white: #ffffff;
-    --text-muted: #666666;
-    --text-light: #aaaaaa;
+    --off-white: #f8f4ee;
+    --text-muted: #8899aa;
+    --text-light: #c8d8e8;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--dark);
+    background: var(--navy);
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
@@ -40,13 +40,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+    background: linear-gradient(to bottom, rgba(13,27,42,0.95), transparent);
     transition: all 0.4s;
   }
   nav.scrolled {
-    background: rgba(5,5,5,0.98);
+    background: rgba(13,27,42,0.98);
     padding: 16px 60px;
-    border-bottom: 1px solid rgba(201,169,110,0.1);
+    border-bottom: 1px solid rgba(212,168,67,0.15);
   }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
@@ -80,25 +80,25 @@
     width: 100%; height: 100%;
     object-fit: cover;
     z-index: 0;
-    filter: brightness(0.6);
+    filter: brightness(0.85) saturate(1.2);
   }
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: 
-      linear-gradient(to top, rgba(5,5,5,0.98) 0%, rgba(5,5,5,0.5) 40%, rgba(5,5,5,0.1) 100%),
-      linear-gradient(to right, rgba(5,5,5,0.8) 0%, transparent 60%);
+      linear-gradient(to top, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.4) 50%, rgba(13,27,42,0.1) 100%),
+      linear-gradient(to right, rgba(13,27,42,0.75) 0%, transparent 70%);
     z-index: 1;
   }
   .hero-portrait {
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 95%;
+    height: 92%;
     z-index: 2;
-    opacity: 0.25;
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 50%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 50%, transparent 100%);
+    opacity: 0.45;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 40%, transparent 100%);
   }
   .hero-content {
     position: relative;
@@ -125,7 +125,7 @@
 
   .hero-the {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20px, 3vw, 32px);
+    font-size: clamp(22px, 3vw, 36px);
     font-weight: 300;
     font-style: italic;
     color: var(--gold-light);
@@ -136,13 +136,13 @@
 
   .hero-godfather {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(72px, 11vw, 160px);
+    font-size: clamp(72px, 11vw, 155px);
     font-weight: 700;
     line-height: 0.85;
     letter-spacing: -2px;
     opacity: 0;
     animation: fadeUp 1s ease 0.7s forwards;
-    background: linear-gradient(to bottom, #ffffff 0%, #c9a96e 100%);
+    background: linear-gradient(to bottom right, #ffffff 0%, #d4a843 60%, #f0d080 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,7 +163,7 @@
 
   .hero-real-estate {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 5vw, 72px);
+    font-size: clamp(26px, 4.5vw, 66px);
     font-weight: 300;
     color: var(--gold);
     letter-spacing: 8px;
@@ -175,7 +175,7 @@
   .hero-name-block {
     margin-top: 40px;
     padding-top: 40px;
-    border-top: 1px solid rgba(201,169,110,0.2);
+    border-top: 1px solid rgba(212,168,67,0.3);
     opacity: 0;
     animation: fadeUp 1s ease 1.3s forwards;
   }
@@ -186,7 +186,7 @@
     color: var(--white);
     margin-bottom: 6px;
   }
-  .hero-title {
+  .hero-title-sub {
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -202,14 +202,14 @@
     animation: fadeUp 1s ease 1.5s forwards;
   }
   .hero-badge {
-    border: 1px solid rgba(201,169,110,0.25);
+    border: 1px solid rgba(212,168,67,0.35);
     padding: 8px 18px;
     font-size: 8px;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gold);
-    background: rgba(201,169,110,0.04);
-    backdrop-filter: blur(4px);
+    color: var(--gold-light);
+    background: rgba(212,168,67,0.08);
+    backdrop-filter: blur(8px);
   }
 
   /* GOLD RULE */
@@ -220,39 +220,39 @@
 
   /* LEGACY STATS */
   .legacy {
-    background: var(--dark-2);
-    padding: 70px 80px;
+    background: var(--navy-2);
+    padding: 60px 80px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
-    border-bottom: 1px solid rgba(201,169,110,0.08);
+    border-bottom: 1px solid rgba(212,168,67,0.1);
   }
   .legacy-stat {
     text-align: center;
     padding: 20px;
-    border-right: 1px solid rgba(201,169,110,0.08);
+    border-right: 1px solid rgba(212,168,67,0.1);
   }
   .legacy-stat:last-child { border-right: none; }
   .legacy-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 400;
     color: var(--gold);
     line-height: 1;
   }
   .legacy-label {
     font-size: 8px;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-top: 10px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  /* ABOUT / ORIGIN STORY */
+  /* ABOUT */
   .origin {
     padding: 120px 80px;
-    background: var(--dark-3);
+    background: var(--navy-3);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
@@ -261,37 +261,36 @@
   .origin-image-wrap { position: relative; }
   .origin-img {
     width: 100%;
-    height: 680px;
+    height: 660px;
     object-fit: cover;
     object-position: top center;
-    filter: grayscale(10%);
   }
   .origin-img-frame {
     position: absolute;
     top: -16px; right: -16px;
     bottom: 16px; left: 16px;
-    border: 1px solid rgba(201,169,110,0.15);
+    border: 1px solid rgba(212,168,67,0.2);
     z-index: -1;
   }
   .origin-badge {
     position: absolute;
     bottom: -20px;
     right: -20px;
-    background: var(--dark-4);
-    border: 1px solid rgba(201,169,110,0.2);
+    background: var(--navy-4);
+    border: 1px solid rgba(212,168,67,0.25);
     padding: 28px 32px;
     text-align: center;
   }
   .origin-badge-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 300;
     color: var(--gold);
     line-height: 1;
   }
   .origin-badge-label {
     font-size: 8px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-top: 6px;
@@ -310,27 +309,28 @@
   .origin-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
   .origin-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 3.5vw, 52px);
+    font-size: clamp(30px, 3.5vw, 50px);
     font-weight: 400;
     line-height: 1.15;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
   .origin-title em { font-style: italic; color: var(--gold-light); }
   .origin-body {
     font-size: 13px;
     line-height: 2;
     color: var(--text-light);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .origin-quote {
-    margin-top: 40px;
-    padding: 28px 32px;
+    margin-top: 36px;
+    padding: 24px 28px;
     border-left: 2px solid var(--gold);
-    background: rgba(201,169,110,0.03);
+    background: rgba(212,168,67,0.05);
+    border-radius: 0 4px 4px 0;
   }
   .origin-quote-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-size: 17px;
     font-style: italic;
     color: var(--gold-light);
     line-height: 1.6;
@@ -346,7 +346,7 @@
   /* TIMELINE */
   .timeline {
     padding: 120px 80px;
-    background: var(--dark);
+    background: var(--navy-2);
   }
   .section-label {
     font-size: 9px;
@@ -358,10 +358,10 @@
     align-items: center;
     gap: 16px;
   }
-  .section-label::before, .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,169,110,0.15); }
+  .section-label::before, .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(212,168,67,0.15); }
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 4vw, 54px);
+    font-size: clamp(30px, 4vw, 52px);
     font-weight: 400;
     line-height: 1.2;
     text-align: center;
@@ -380,13 +380,12 @@
     left: 50%;
     top: 0; bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    background: linear-gradient(to bottom, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
     transform: translateX(-50%);
   }
   .timeline-item {
     display: grid;
     grid-template-columns: 1fr 60px 1fr;
-    gap: 0;
     margin-bottom: 60px;
     align-items: center;
   }
@@ -394,17 +393,11 @@
   .timeline-item:nth-child(odd) .tl-empty { grid-column: 3; }
   .timeline-item:nth-child(even) .tl-content { grid-column: 3; text-align: left; padding-left: 40px; }
   .timeline-item:nth-child(even) .tl-empty { grid-column: 1; }
-  .tl-dot {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
+  .tl-dot { grid-column: 2; display: flex; align-items: center; justify-content: center; z-index: 1; }
   .tl-dot-inner {
     width: 14px; height: 14px;
     border: 2px solid var(--gold);
-    background: var(--dark);
+    background: var(--navy-2);
     border-radius: 50%;
     position: relative;
   }
@@ -417,29 +410,22 @@
   }
   .tl-year {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 300;
-    color: rgba(201,169,110,0.3);
-    margin-bottom: 8px;
+    color: rgba(212,168,67,0.35);
+    margin-bottom: 6px;
   }
   .tl-title {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 8px;
   }
-  .tl-desc {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
+  .tl-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
 
   /* ACHIEVEMENTS */
-  .achievements {
-    padding: 120px 80px;
-    background: var(--dark-2);
-  }
+  .achievements { padding: 120px 80px; background: var(--navy-3); }
   .ach-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -447,11 +433,12 @@
     margin-top: 60px;
   }
   .ach-card {
-    background: var(--dark-3);
-    padding: 50px 40px;
+    background: var(--navy-4);
+    padding: 48px 38px;
     position: relative;
     overflow: hidden;
-    transition: background 0.4s;
+    transition: background 0.4s, transform 0.3s;
+    cursor: default;
   }
   .ach-card::before {
     content: '';
@@ -462,23 +449,20 @@
     transform: scaleX(0);
     transition: transform 0.5s ease;
   }
-  .ach-card:hover { background: var(--dark-4); }
+  .ach-card:hover { background: rgba(212,168,67,0.06); transform: translateY(-4px); }
   .ach-card:hover::before { transform: scaleX(1); }
-  .ach-icon { font-size: 32px; margin-bottom: 20px; }
+  .ach-icon { font-size: 30px; margin-bottom: 18px; }
   .ach-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 400;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: var(--white);
   }
   .ach-desc { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
 
   /* TESTIMONIALS */
-  .testimonials {
-    padding: 120px 80px;
-    background: var(--dark-3);
-  }
+  .testimonials { padding: 120px 80px; background: var(--navy-2); }
   .test-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -486,18 +470,18 @@
     margin-top: 60px;
   }
   .test-card {
-    background: var(--dark-4);
-    padding: 44px 36px;
+    background: var(--navy-3);
+    padding: 44px 34px;
     transition: background 0.3s;
   }
-  .test-card:hover { background: rgba(201,169,110,0.03); }
-  .test-stars { color: var(--gold); font-size: 11px; letter-spacing: 3px; margin-bottom: 16px; }
+  .test-card:hover { background: var(--navy-4); }
+  .test-stars { color: var(--gold); font-size: 11px; letter-spacing: 3px; margin-bottom: 14px; }
   .test-quote {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 80px;
-    color: rgba(201,169,110,0.1);
+    font-size: 72px;
+    color: rgba(212,168,67,0.15);
     line-height: 0.8;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .test-text {
     font-family: 'Cormorant Garamond', serif;
@@ -505,19 +489,14 @@
     font-style: italic;
     color: var(--text-light);
     line-height: 1.8;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
-  .test-author {
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
+  .test-author { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
 
   /* CONTACT */
   .contact {
     padding: 120px 80px;
-    background: var(--dark);
+    background: var(--navy-3);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
@@ -525,41 +504,35 @@
   }
   .contact-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 4vw, 54px);
+    font-size: clamp(30px, 4vw, 50px);
     font-weight: 400;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .contact-title em { font-style: italic; color: var(--gold-light); }
-  .contact-body { font-size: 13px; line-height: 1.9; color: var(--text-muted); margin-bottom: 40px; }
-  .contact-details { display: flex; flex-direction: column; gap: 20px; }
+  .contact-body { font-size: 13px; line-height: 1.9; color: var(--text-muted); margin-bottom: 36px; }
+  .contact-details { display: flex; flex-direction: column; gap: 18px; }
   .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 13px;
-    color: var(--text-light);
+    display: flex; align-items: center; gap: 16px;
+    font-size: 13px; color: var(--text-light);
   }
   .contact-icon {
-    width: 42px; height: 42px;
-    border: 1px solid rgba(201,169,110,0.2);
+    width: 40px; height: 40px;
+    border: 1px solid rgba(212,168,67,0.25);
     display: flex; align-items: center; justify-content: center;
-    font-size: 16px; flex-shrink: 0;
+    font-size: 15px; flex-shrink: 0;
   }
   .contact-item a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
   .contact-item a:hover { color: var(--gold); }
 
-  .contact-form { display: flex; flex-direction: column; gap: 18px; }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .form-field { display: flex; flex-direction: column; gap: 8px; }
-  .form-field label {
-    font-size: 8px; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--gold);
-  }
+  .form-field label { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
   .form-field input, .form-field select, .form-field textarea {
-    background: var(--dark-3);
-    border: 1px solid rgba(201,169,110,0.12);
+    background: var(--navy-2);
+    border: 1px solid rgba(212,168,67,0.15);
     color: var(--white);
-    padding: 15px 18px;
+    padding: 14px 18px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px; font-weight: 300;
     outline: none;
@@ -568,11 +541,11 @@
     -webkit-appearance: none;
   }
   .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold); }
-  .form-field select option { background: var(--dark-3); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-field select option { background: var(--navy-2); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .submit-btn {
     background: var(--gold);
-    color: var(--dark);
+    color: var(--navy);
     border: none;
     padding: 18px 48px;
     font-family: 'Montserrat', sans-serif;
@@ -580,7 +553,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s;
-    font-weight: 500;
+    font-weight: 600;
     align-self: flex-start;
     margin-top: 8px;
   }
@@ -588,8 +561,8 @@
 
   /* PRESENTED BY */
   .presented-by {
-    background: var(--dark-2);
-    border-top: 1px solid rgba(201,169,110,0.08);
+    background: var(--navy-2);
+    border-top: 1px solid rgba(212,168,67,0.1);
     padding: 60px 80px;
     display: flex;
     justify-content: space-between;
@@ -604,15 +577,15 @@
   .pb-link {
     font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
     color: var(--gold); text-decoration: none;
-    border-bottom: 1px solid rgba(201,169,110,0.3); padding-bottom: 2px;
+    border-bottom: 1px solid rgba(212,168,67,0.3); padding-bottom: 2px;
     transition: border-color 0.3s;
   }
   .pb-link:hover { border-color: var(--gold); }
 
   /* FOOTER */
   footer {
-    background: var(--dark);
-    border-top: 1px solid rgba(201,169,110,0.06);
+    background: var(--navy);
+    border-top: 1px solid rgba(212,168,67,0.08);
     padding: 28px 80px;
     display: flex;
     justify-content: space-between;
@@ -621,7 +594,6 @@
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--gold); letter-spacing: 2px; }
   .footer-copy { font-size: 9px; color: var(--text-muted); letter-spacing: 1px; }
 
-  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -633,15 +605,14 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     nav.scrolled { padding: 12px 20px; }
     .nav-links { display: none; }
     .hero-content { padding: 0 24px 80px; }
-    .hero-portrait { opacity: 0.1; }
-    .legacy { grid-template-columns: 1fr 1fr; padding: 40px 20px; gap: 0; }
-    .legacy-stat { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.08); }
+    .hero-portrait { opacity: 0.2; }
+    .legacy { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
+    .legacy-stat { border-right: none; border-bottom: 1px solid rgba(212,168,67,0.08); }
     .origin { grid-template-columns: 1fr; padding: 60px 20px; gap: 60px; }
     .origin-img { height: 400px; }
     .origin-badge { position: relative; bottom: auto; right: auto; margin-top: 20px; }
@@ -653,10 +624,8 @@
     .timeline-item:nth-child(odd) .tl-empty,
     .timeline-item:nth-child(even) .tl-empty { display: none; }
     .tl-dot { grid-column: 1; justify-content: flex-start; padding-left: 13px; }
-    .achievements { padding: 60px 20px; }
-    .ach-grid { grid-template-columns: 1fr; }
-    .testimonials { padding: 60px 20px; }
-    .test-grid { grid-template-columns: 1fr; }
+    .achievements, .testimonials { padding: 60px 20px; }
+    .ach-grid, .test-grid { grid-template-columns: 1fr; }
     .contact { grid-template-columns: 1fr; padding: 60px 20px; gap: 60px; }
     .form-row { grid-template-columns: 1fr; }
     .presented-by { flex-direction: column; padding: 40px 20px; text-align: center; }
@@ -667,18 +636,16 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">Merrill Johnson</div>
   <ul class="nav-links">
-    <li><a href="#origin">Legacy</a></li>
+    <li><a href="#origin">About</a></li>
     <li><a href="#timeline">Journey</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Connect</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline id="heroVideo">
     <source src="godfather-hero.mp4" type="video/mp4">
@@ -696,59 +663,42 @@
     <div class="hero-real-estate">Real Estate</div>
     <div class="hero-name-block">
       <div class="hero-name">Merrill Johnson</div>
-      <div class="hero-title">Broker · Team Leader · Investor · Partner · KW West Atlanta</div>
+      <div class="hero-title-sub">Broker · Team Leader · Investor · Partner · KW West Atlanta</div>
     </div>
     <div class="hero-badges">
-      <div class="hero-badge">Crystal Phoenix Award · 20 Consecutive Years</div>
+      <div class="hero-badge">Crystal Phoenix · 20 Consecutive Years</div>
       <div class="hero-badge">600+ Agents Recruited</div>
-      <div class="hero-badge">21 Years · #1 Profit Share</div>
-      <div class="hero-badge">Started 2001 · Still Standing</div>
+      <div class="hero-badge">#1 Profit Share · 21 Years</div>
+      <div class="hero-badge">Started 2001 · Still Dominating</div>
     </div>
   </div>
 </section>
 
 <div class="gold-rule"></div>
 
-<!-- LEGACY STATS -->
 <div class="legacy reveal">
-  <div class="legacy-stat">
-    <div class="legacy-num">23+</div>
-    <div class="legacy-label">Years in Real Estate</div>
-  </div>
-  <div class="legacy-stat">
-    <div class="legacy-num">600+</div>
-    <div class="legacy-label">Agents Recruited</div>
-  </div>
-  <div class="legacy-stat">
-    <div class="legacy-num">400+</div>
-    <div class="legacy-label">Active Agents · KW West ATL</div>
-  </div>
-  <div class="legacy-stat">
-    <div class="legacy-num">20x</div>
-    <div class="legacy-label">Crystal Phoenix Award</div>
-  </div>
-  <div class="legacy-stat">
-    <div class="legacy-num">21yr</div>
-    <div class="legacy-label">#1 Profit Share Agent</div>
-  </div>
+  <div class="legacy-stat"><div class="legacy-num">23+</div><div class="legacy-label">Years Active</div></div>
+  <div class="legacy-stat"><div class="legacy-num">600+</div><div class="legacy-label">Agents Recruited</div></div>
+  <div class="legacy-stat"><div class="legacy-num">400+</div><div class="legacy-label">Active KW West ATL Agents</div></div>
+  <div class="legacy-stat"><div class="legacy-num">20x</div><div class="legacy-label">Crystal Phoenix Award</div></div>
+  <div class="legacy-stat"><div class="legacy-num">21yr</div><div class="legacy-label">#1 Profit Share</div></div>
 </div>
 
-<!-- ORIGIN STORY -->
 <section class="origin reveal" id="origin">
   <div class="origin-image-wrap">
     <img class="origin-img" src="503130694_10161663870388737_4434972603528245401_n.jpg" alt="Merrill Johnson">
     <div class="origin-img-frame"></div>
     <div class="origin-badge">
       <div class="origin-badge-num">2001</div>
-      <div class="origin-badge-label">Where It Began</div>
+      <div class="origin-badge-label">Since Day One</div>
     </div>
   </div>
   <div class="origin-text">
-    <div class="origin-label">The Origin</div>
-    <h2 class="origin-title">Born from <em>Resilience.</em><br>Built for <em>Legacy.</em></h2>
-    <p class="origin-body">Merrill Johnson entered real estate on October 19, 2001 — just weeks after September 11th shook the world. While others hesitated, Merrill stepped forward. That decision defined everything that followed.</p>
-    <p class="origin-body">In his first year, he earned Rookie of the Year at Coldwell Banker. Within a decade, he became the #1 selling agent out of 170 at Keller Williams Atlanta Classic — holding that title from 2011 to 2018. A former CFO, Merrill brought financial precision and business acumen to every transaction, setting him apart from every agent in the room.</p>
-    <p class="origin-body">Today, as Controlling Partner of KW West Atlanta — the fastest-growing market center in the Keller Williams network — Merrill Johnson isn't just in the game. He <em style="color: var(--gold-light); font-style: italic;">is</em> the game.</p>
+    <div class="origin-label">The Man Behind the Name</div>
+    <h2 class="origin-title">Atlanta's Most <em>Trusted</em> Name in Real Estate</h2>
+    <p class="origin-body">When Merrill Johnson stepped into real estate in October 2001 — weeks after September 11th — most people were stepping back. Not Merrill. That first year he earned Rookie of the Year at Coldwell Banker. That's who he is.</p>
+    <p class="origin-body">A former CFO turned Top Producer, Merrill brings financial precision, market mastery, and genuine care to every client relationship. He ranked #1 out of 170 agents at KW Atlanta Classic from 2011 to 2018 — not once, seven years straight.</p>
+    <p class="origin-body">Today as Controlling Partner of KW West Atlanta — the fastest-growing market center in the KW network — Merrill Johnson isn't just shaping careers. He's shaping Atlanta's real estate future, one agent and one family at a time.</p>
     <div class="origin-quote">
       <div class="origin-quote-text">"When the stakes are highest, Merrill Johnson stands as a steadfast guide through every facet of buying and selling."</div>
       <div class="origin-quote-attr">— His Peers · The Godfather of Real Estate</div>
@@ -758,172 +708,84 @@
 
 <div class="gold-rule"></div>
 
-<!-- TIMELINE -->
 <section class="timeline reveal" id="timeline">
   <div class="section-label">The Journey</div>
-  <h2 class="section-title">A Career Built on <em>Dominance</em></h2>
+  <h2 class="section-title">23 Years of <em>Winning</em></h2>
   <div class="timeline-items">
     <div class="timeline-item">
-      <div class="tl-content">
-        <div class="tl-year">2001</div>
-        <div class="tl-title">The Beginning</div>
-        <div class="tl-desc">Entered real estate weeks after 9/11. Earned Rookie of the Year at Coldwell Banker Residential Brokerage — Smyrna/Vinings Office.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">2001</div><div class="tl-title">Rookie of the Year</div><div class="tl-desc">Entered real estate weeks after 9/11 and immediately earned Rookie of the Year at Coldwell Banker — Smyrna/Vinings Office.</div></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
       <div class="tl-empty"></div>
     </div>
     <div class="timeline-item">
       <div class="tl-empty"></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-content">
-        <div class="tl-year">2003</div>
-        <div class="tl-title">Top 10 Agent</div>
-        <div class="tl-desc">Joined Keller Williams Realty Cityside — ranked in the Top 10 agents for four consecutive years.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">2003</div><div class="tl-title">Top 10 Agent</div><div class="tl-desc">Joined KW Realty Cityside — ranked in the Top 10 agents for four consecutive years.</div></div>
     </div>
     <div class="timeline-item">
-      <div class="tl-content">
-        <div class="tl-year">2007</div>
-        <div class="tl-title">Team Leader</div>
-        <div class="tl-desc">Assumed role of Team Leader at Keller Williams Realty Atlanta Classic Market Center — navigating the 2008 economic crisis with zero retreat.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">2007</div><div class="tl-title">Team Leader</div><div class="tl-desc">Became Team Leader at KW Atlanta Classic Market Center. Led through the 2008 financial crisis without missing a beat.</div></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
       <div class="tl-empty"></div>
     </div>
     <div class="timeline-item">
       <div class="tl-empty"></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-content">
-        <div class="tl-year">2011</div>
-        <div class="tl-title">#1 Selling Agent</div>
-        <div class="tl-desc">Became the #1 selling agent out of 170 at KW Atlanta Classic — held the title unbroken through 2018.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">2011</div><div class="tl-title">#1 Selling Agent</div><div class="tl-desc">#1 selling agent out of 170 at KW Atlanta Classic — held the top spot every year through 2018.</div></div>
     </div>
     <div class="timeline-item">
-      <div class="tl-content">
-        <div class="tl-year">2022</div>
-        <div class="tl-title">Crystal Phoenix · 20 Years</div>
-        <div class="tl-desc">Received the Crystal Phoenix Award from the Atlanta REALTORS Association for 20 consecutive years as a Top Producer.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">2022</div><div class="tl-title">Crystal Phoenix · 20 Years</div><div class="tl-desc">Received the Crystal Phoenix Award from the Atlanta REALTORS Association for 20 consecutive years as a Top Producer.</div></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
       <div class="tl-empty"></div>
     </div>
     <div class="timeline-item">
       <div class="tl-empty"></div>
       <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-content">
-        <div class="tl-year">Today</div>
-        <div class="tl-title">The Godfather</div>
-        <div class="tl-desc">Controlling Partner of KW West Atlanta — 400+ agents, fastest-growing market center in the KW network. The legacy continues.</div>
-      </div>
+      <div class="tl-content"><div class="tl-year">Now</div><div class="tl-title">Still Running Atlanta</div><div class="tl-desc">Controlling Partner of KW West Atlanta — 400+ agents, fastest-growing market center in the KW network. Still closing. Still leading.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section class="achievements reveal" id="achievements">
   <div class="section-label">The Résumé</div>
   <h2 class="section-title">Built Different. <em>Proven Different.</em></h2>
   <div class="ach-grid">
-    <div class="ach-card">
-      <div class="ach-icon">🏆</div>
-      <div class="ach-title">Crystal Phoenix Award</div>
-      <div class="ach-desc">Awarded by the Atlanta REALTORS Association for 20 consecutive years as a Top Producer — a feat achieved by very few in the industry.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">👑</div>
-      <div class="ach-title">#1 Profit Share · 21 Years</div>
-      <div class="ach-desc">The #1 Profit Sharing Agent in his Market Center for over 21 consecutive years — a testament to his ability to attract and develop elite talent.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">🚀</div>
-      <div class="ach-title">Fastest Growing Market Center</div>
-      <div class="ach-desc">KW West Atlanta under Merrill's leadership is currently the fastest-growing market center in the entire Keller Williams network.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">💼</div>
-      <div class="ach-title">Former CFO</div>
-      <div class="ach-desc">Merrill's background as a Chief Financial Officer brings unparalleled financial acumen and business insight to every real estate decision.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">🌟</div>
-      <div class="ach-title">600+ Agents Recruited</div>
-      <div class="ach-desc">Recruited and mentored over 600 agents throughout his career — shaping the next generation of Atlanta's real estate professionals.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">💪</div>
-      <div class="ach-title">Three Crises. Zero Retreat.</div>
-      <div class="ach-desc">Started after 9/11. Survived 2008. Thrived through COVID-19. Merrill's resilience is the foundation every client stands on.</div>
-    </div>
+    <div class="ach-card"><div class="ach-icon">🏆</div><div class="ach-title">Crystal Phoenix · 20 Years</div><div class="ach-desc">20 consecutive years as a Top Producer recognized by the Atlanta REALTORS Association — a feat very few in the industry have achieved.</div></div>
+    <div class="ach-card"><div class="ach-icon">👑</div><div class="ach-title">#1 Profit Share · 21 Years</div><div class="ach-desc">The #1 Profit Sharing Agent in his Market Center for over 21 consecutive years — proof of his unmatched ability to attract elite talent.</div></div>
+    <div class="ach-card"><div class="ach-icon">🚀</div><div class="ach-title">Fastest Growing Market Center</div><div class="ach-desc">KW West Atlanta is currently the fastest-growing market center in the entire Keller Williams network under Merrill's leadership.</div></div>
+    <div class="ach-card"><div class="ach-icon">💼</div><div class="ach-title">Former CFO</div><div class="ach-desc">A background as Chief Financial Officer gives Merrill unparalleled financial insight — he doesn't just sell homes, he engineers wealth.</div></div>
+    <div class="ach-card"><div class="ach-icon">🌟</div><div class="ach-title">600+ Agents Recruited</div><div class="ach-desc">Recruited and mentored over 600 agents — actively shaping the next generation of Atlanta's top real estate professionals.</div></div>
+    <div class="ach-card"><div class="ach-icon">💪</div><div class="ach-title">Three Crises. Zero Retreat.</div><div class="ach-desc">Started after 9/11. Grew through 2008. Thrived through COVID-19. Merrill's track record proves he performs when it matters most.</div></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials reveal">
   <div class="section-label">Client Voices</div>
   <h2 class="section-title">What Atlanta <em>Says</em></h2>
   <div class="test-grid">
-    <div class="test-card">
-      <div class="test-stars">★★★★★</div>
-      <div class="test-quote">"</div>
-      <div class="test-text">Merrill doesn't just sell homes — he builds relationships that last a lifetime. He guided us through our first purchase with patience, expertise, and genuine care.</div>
-      <div class="test-author">— First-Time Buyer · Atlanta, GA</div>
-    </div>
-    <div class="test-card">
-      <div class="test-stars">★★★★★</div>
-      <div class="test-quote">"</div>
-      <div class="test-text">As an investor, I've worked with dozens of agents. Nobody reads the market like Merrill. His financial background alone is worth more than most agents' entire careers.</div>
-      <div class="test-author">— Real Estate Investor · Metro Atlanta</div>
-    </div>
-    <div class="test-card">
-      <div class="test-stars">★★★★★</div>
-      <div class="test-quote">"</div>
-      <div class="test-text">They call him the Godfather for a reason. He mentored me when I was a new agent and changed the trajectory of my entire career. I owe everything to Merrill.</div>
-      <div class="test-author">— KW Agent · West Atlanta</div>
-    </div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-quote">"</div><div class="test-text">Merrill doesn't just sell homes — he builds relationships that last a lifetime. He guided us through our purchase with patience, expertise, and genuine care.</div><div class="test-author">— Home Buyer · Atlanta, GA</div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-quote">"</div><div class="test-text">I've worked with dozens of agents. Nobody reads the market like Merrill. His financial background alone is worth more than most agents' entire careers.</div><div class="test-author">— Real Estate Investor · Metro Atlanta</div></div>
+    <div class="test-card"><div class="test-stars">★★★★★</div><div class="test-quote">"</div><div class="test-text">He mentored me when I was a new agent and changed the trajectory of my entire career. There's a reason they call him the Godfather.</div><div class="test-author">— KW Agent · West Atlanta</div></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact reveal" id="contact">
   <div class="contact-left">
-    <div class="origin-label" style="margin-bottom: 20px;">Make Your Move</div>
+    <div class="origin-label" style="margin-bottom: 20px;">Let's Talk</div>
     <h2 class="contact-title">Work with <em>The Godfather</em></h2>
-    <p class="contact-body">Whether you're buying, selling, investing, or growing your real estate career — Merrill Johnson brings 23 years of proven excellence to every conversation. There's a reason Atlanta calls him The Godfather.</p>
+    <p class="contact-body">Buying, selling, investing, or growing your real estate career — Merrill Johnson brings 23 years of proven excellence and genuine commitment to every conversation.</p>
     <div class="contact-details">
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <span>2700 Cumberland Pkwy, Suite 400 · Atlanta, GA 30339</span>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🏢</div>
-        <span>Keller Williams West Atlanta · Market Center #1176</span>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🌐</div>
-        <a href="https://www.kwwestatlanta.com" target="_blank">kwwestatlanta.com</a>
-      </div>
+      <div class="contact-item"><div class="contact-icon">📍</div><span>2700 Cumberland Pkwy, Suite 400 · Atlanta, GA 30339</span></div>
+      <div class="contact-item"><div class="contact-icon">🏢</div><span>Keller Williams West Atlanta · Market Center #1176</span></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><a href="https://www.kwwestatlanta.com" target="_blank">kwwestatlanta.com</a></div>
     </div>
   </div>
   <div class="contact-form">
     <div class="form-row">
-      <div class="form-field">
-        <label>First Name</label>
-        <input type="text" placeholder="First Name">
-      </div>
-      <div class="form-field">
-        <label>Last Name</label>
-        <input type="text" placeholder="Last Name">
-      </div>
+      <div class="form-field"><label>First Name</label><input type="text" placeholder="First Name"></div>
+      <div class="form-field"><label>Last Name</label><input type="text" placeholder="Last Name"></div>
     </div>
-    <div class="form-field">
-      <label>Email</label>
-      <input type="email" placeholder="your@email.com">
-    </div>
-    <div class="form-field">
-      <label>Phone</label>
-      <input type="tel" placeholder="(000) 000-0000">
-    </div>
+    <div class="form-field"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+    <div class="form-field"><label>Phone</label><input type="tel" placeholder="(000) 000-0000"></div>
     <div class="form-field">
       <label>I Am Looking To</label>
       <select>
@@ -934,15 +796,11 @@
         <option>Other</option>
       </select>
     </div>
-    <div class="form-field">
-      <label>Message</label>
-      <textarea rows="4" placeholder="Tell Merrill how he can help you..."></textarea>
-    </div>
+    <div class="form-field"><label>Message</label><textarea rows="4" placeholder="Tell Merrill how he can help you..."></textarea></div>
     <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
   </div>
 </section>
 
-<!-- PRESENTED BY -->
 <div class="presented-by reveal">
   <div>
     <div class="pb-label">This Cinematic Experience Created By</div>
@@ -951,18 +809,16 @@
   </div>
   <div class="pb-cta">
     <p>Want a cinematic brand page like this for you or your agents?</p>
-    <a href="mailto:sharainak@rainmanagementsolutionsllc.com?subject=I want a page like Merrill's!&body=Hi Rain! I just saw Merrill Johnson's brand page and I'd love something like this for me." class="pb-link">Get Yours Today →</a>
+    <a href="mailto:sharainak@rainmanagementsolutionsllc.com?subject=I want a page like Merrill's!" class="pb-link">Get Yours Today →</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-name">Merrill Johnson · The Godfather of Real Estate · KW West Atlanta</div>
   <div class="footer-copy">© 2026 · Atlanta, Georgia · Keller Williams West Atlanta</div>
 </footer>
 
 <script>
-  // FORCE VIDEO AUTOPLAY
   const heroVideo = document.getElementById('heroVideo');
   if (heroVideo) {
     heroVideo.muted = true;
@@ -971,19 +827,16 @@
     });
   }
 
-  // NAV SCROLL
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // SCROLL REVEAL
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  // FORM
   function handleSubmit() {
     alert('Thank you! Merrill will be in touch with you shortly.');
   }
